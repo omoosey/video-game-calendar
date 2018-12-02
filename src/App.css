@@ -50,6 +50,7 @@
   width: 100%;
   height: 25%;
   border: 2px white dashed;
+  display: flex;
 }
 
 .day {
