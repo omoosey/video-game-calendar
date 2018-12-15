@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Month from './Month.js'
 
 class App extends Component {
   state = {
@@ -40,37 +41,7 @@ class App extends Component {
         <header className="App-header">
         <h1>Game Release Calendar</h1>
           <div id="calendar">
-            <div className="month">
-              <h2>{this.state.months[0].name}</h2>
-              <div className="week">
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-              </div>
-              <div className="week">
-                <div className="day">
-                </div>
-              </div>
-              <div className="week">
-                <div className="day">
-                </div>
-              </div>
-              <div className="week">
-                <div className="day">
-                </div>
-              </div>
-            </div>
+            <Month />
           </div>
           <div id="list">
           </div>

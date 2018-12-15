@@ -58,3 +58,7 @@
   width: 48px;
   border: 2px purple solid;
 }
+
+.day.blank {
+  border: 2px gray solid;
+}
