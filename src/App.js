@@ -25,13 +25,7 @@ class App extends Component {
   render() {
     let days = [];
 
-    /* (day + Math.floor(2.6month - 0.2) - 2century + year + Math.floor(year/4) + Math.floor(century/4))%7 
-    ** day (1 to 31)
-    ** month (1 = March, ..., 10 = December, 11 = Jan, 12 = Feb) Treat Jan & Feb as months of the preceding year
-    ** century (1987 has C = 19)
-    ** year (1987 has Y = 87 except Y = 86 for Jan & Feb)
-    ** date (0 = Sunday, ..., 6 = Saturday)
-    */
+    
     
 
     return (
