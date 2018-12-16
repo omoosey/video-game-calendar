@@ -4,7 +4,9 @@ import Week from './Week.js';
 class Month extends Component {
 	render () {
 		let firstWeek = [];
+		let lastWeek = [];
 		let firstDay;
+		let lastDay;
 
 	/* (day + Math.floor(2.6month - 0.2) - 2century + year + Math.floor(year/4) + Math.floor(century/4))%7 
 	    ** day (1 to 31)
@@ -14,8 +16,15 @@ class Month extends Component {
 	    ** date (0 = Sunday, ..., 6 = Saturday)
 	    */
 
-		firstDay = (1 + Math.floor((2.6*12) - 0.2) - (2*20) + 18 + Math.floor(18/4) + Math.floor(20/4))%7;
+		firstDay = (1 + Math.floor((2.6*1) - 0.2) - (2*20) + 19 + Math.floor(18/4) + Math.floor(20/4))%7;
+		
+		if (firstDay < 0) {
+			firstDay += 7
+		}
+		
 	    console.log(firstDay);
+
+	    lastDay = (31 + Math.floor((2.6*1) - 0.2) - (2*20) + 19 + Math.floor(18/4) + Math.floor(20/4))%7;
 
 	    // Clean up with a for loop maybe?
 		if(firstDay === 0){
@@ -139,6 +148,127 @@ class Month extends Component {
 						</div>)
 		}
 
+		if(lastDay === 0){
+			lastWeek.push(<div className="week">
+							<div className="day">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+						</div>)
+		} else if (lastDay === 1){
+			lastWeek.push(<div className="week">
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+						</div>)
+		} else if (lastDay === 2){
+			lastWeek.push(<div className="week">
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+						</div>)
+		} else if (lastDay === 3){
+			lastWeek.push(<div className="week">
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+						</div>)
+		} else if (lastDay === 4){
+			lastWeek.push(<div className="week">
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day blank">
+							</div>
+							<div className="day blank">
+							</div>
+						</div>)
+		} else if (lastDay === 5){
+			lastWeek.push(<div className="week">
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day blank">
+							</div>
+						</div>)
+		} else if (lastDay === 6){
+			lastWeek.push(<div className="week">
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+							<div className="day">
+							</div>
+						</div>)
+		}
+
 		return (
 			<div className="month">
               <h2>{this.props.months[0].name}</h2>
@@ -191,22 +321,7 @@ class Month extends Component {
                 <div className="day">
                 </div>
               </div>
-              <div className="week">
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-                <div className="day">
-                </div>
-              </div>
+              {lastWeek}
             </div>
 		)
 	}
