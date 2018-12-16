@@ -32,16 +32,14 @@ class App extends Component {
     ** year (1987 has Y = 87 except Y = 86 for Jan & Feb)
     ** date (0 = Sunday, ..., 6 = Saturday)
     */
-    let date = (1 + Math.floor((2.6*11) - 0.2) - (2*20) + 18 + Math.floor(18/4) + Math.floor(20/4))%7;
-
-    console.log(date);
+    
 
     return (
       <div className="App">
         <header className="App-header">
         <h1>Game Release Calendar</h1>
           <div id="calendar">
-            <Month />
+            <Month months={this.state.months}/>
           </div>
           <div id="list">
           </div>
